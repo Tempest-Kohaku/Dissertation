@@ -1,0 +1,11 @@
+{
+    "seed": 42,
+    "image_size": 224,
+    "background_size": 50,
+    "explain_size": 40,
+    "model_path": "outputs/models/best_densenet121_tb.pth",
+    "train_csv": "outputs/train_split.csv",
+    "test_csv": "outputs/test_split.csv",
+    "explainer": "shap.GradientExplainer",
+    "explained_output": "TB logit"
+}

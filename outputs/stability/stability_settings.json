@@ -1,0 +1,24 @@
+{
+    "seed": 42,
+    "image_size": 224,
+    "background_size": 50,
+    "nsamples": 200,
+    "model_path": "outputs/models/best_densenet121_tb.pth",
+    "shap_values_path": "outputs/shap_balanced/shap_values.npy",
+    "shap_metadata_path": "outputs/shap_balanced/shap_metadata.csv",
+    "perturbations": [
+        "brightness_plus",
+        "brightness_minus",
+        "contrast_plus",
+        "contrast_minus",
+        "gaussian_noise",
+        "rotation"
+    ],
+    "metrics": [
+        "cosine_similarity",
+        "spearman_correlation",
+        "jaccard_top10",
+        "absolute_probability_change",
+        "prediction_change_rate"
+    ]
+}
