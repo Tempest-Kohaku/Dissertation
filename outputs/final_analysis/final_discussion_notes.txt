@@ -1,0 +1,47 @@
+Stage 8 Final Analysis Summary
+========================================
+
+DenseNet121 baseline metrics:
+ accuracy  precision  sensitivity_recall  specificity  f1_score  roc_auc  true_negative  false_positive  false_negative  true_positive
+      0.9   0.927273            0.864407     0.934426  0.894737 0.948041             57               4               8             51
+
+Surrogate classification fidelity:
+              model  fidelity_accuracy  fidelity_precision  fidelity_recall  fidelity_f1  fidelity_auc
+logistic_regression           0.983333            0.964912         1.000000     0.982143      0.997203
+      decision_tree           0.925000            0.942308         0.890909     0.915888      0.921958
+
+Surrogate probability fidelity:
+                  model  probability_mae  probability_mse  probability_rmse  probability_r2  probability_correlation
+       ridge_regression         0.112914         0.026461          0.162669        0.859287                 0.934370
+decision_tree_regressor         0.095751         0.036968          0.192270        0.803415                 0.913995
+
+Faithfulness summary:
+mask_type  mask_percentage  mean_probability_drop  std_probability_drop  mean_absolute_probability_change  std_absolute_probability_change  n
+     high                5              -0.443669              0.361142                          0.456369                         0.344577 45
+     high               10              -0.415489              0.370953                          0.457222                         0.316792 45
+     high               15              -0.366047              0.378072                          0.449786                         0.270311 45
+     high               20              -0.324263              0.398098                          0.448420                         0.245696 45
+     high               30              -0.253148              0.420242                          0.435628                         0.219224 45
+      low                5              -0.016496              0.210654                          0.139201                         0.157595 45
+      low               10              -0.136930              0.269391                          0.227909                         0.196531 45
+      low               15              -0.223497              0.316164                          0.305705                         0.235512 45
+      low               20              -0.266998              0.325002                          0.337278                         0.249385 45
+      low               30              -0.355575              0.357877                          0.418878                         0.279171 45
+   random                5              -0.298756              0.366357                          0.400097                         0.248566 45
+   random               10              -0.176570              0.362438                          0.350604                         0.193727 45
+   random               15              -0.044152              0.392727                          0.338936                         0.196824 45
+   random               20               0.029524              0.388481                          0.337265                         0.188352 45
+   random               30               0.103366              0.400781                          0.335091                         0.238149 45
+
+Stability summary:
+    perturbation  mean_cosine_similarity  std_cosine_similarity  mean_spearman_correlation  std_spearman_correlation  mean_jaccard_top10  std_jaccard_top10  mean_absolute_probability_change  std_absolute_probability_change  prediction_change_rate  n
+brightness_minus                0.828913               0.037062                   0.607839                  0.087275            0.353663           0.067132                          0.028382                         0.051998                0.022222 45
+ brightness_plus                0.839827               0.025498                   0.634763                  0.062908            0.367050           0.053698                          0.030401                         0.042251                0.000000 45
+  contrast_minus                0.881339               0.020345                   0.719809                  0.044939            0.438808           0.057926                          0.020305                         0.030072                0.022222 45
+   contrast_plus                0.880694               0.019864                   0.714131                  0.039638            0.434866           0.057620                          0.021692                         0.033344                0.022222 45
+  gaussian_noise                0.721419               0.012907                   0.554027                  0.051665            0.227795           0.034314                          0.150770                         0.186813                0.200000 45
+        rotation                0.709770               0.024593                   0.542915                  0.053205            0.230634           0.033856                          0.089806                         0.135944                0.111111 45
+
+Lung-region relevance summary:
+ n_images  mean_lung_attribution_ratio  std_lung_attribution_ratio  median_lung_attribution_ratio  mean_outside_attribution_ratio  std_outside_attribution_ratio  mean_lung_area_fraction  std_lung_area_fraction  mean_lung_enrichment  std_lung_enrichment
+      138                     0.415302                    0.106852                       0.421406                        0.584698                       0.106852                 0.265587                0.062922              1.560216              0.15987

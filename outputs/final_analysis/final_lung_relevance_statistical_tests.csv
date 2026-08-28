@@ -1,0 +1,2 @@
+test,n_images,mean_lung_enrichment,median_lung_enrichment,wilcoxon_statistic,p_value_two_sided
+lung_enrichment_vs_1,138,1.560215898189418,1.5531954083188506,0.0,2.156387737235857e-24
